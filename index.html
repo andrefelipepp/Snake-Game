@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="/images/snake_8346368.png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Snake Game</h1>
+            <img src="/images/snake_8346368.png" alt="snake" width="50" height="50">
+        </div>
+
+        <div class="menu">
+            <div class="div1">
+                <button id="playBtn" class="btn">JOGAR</button>
+            </div>
+            <div class="div1">
+                <button id="instructionsBtn" class="btn">INSTRUÇÕES</button>
+            </div>
+            <div class="div1">
+                <button id="creditsBtn" class="btn">CRÉDITOS</button>
+            </div>
+        </div>
+
+        <div id="instructions" class="hidden">
+            <p>Bem-vindo ao jogo da Cobrinha!</p>
+            <br>
+            <ol>
+                <li>Use as setas do teclado para mover a cobra.</li>
+                <li>Coma as frutas vermelhas para crescer e ganhar pontos.</li>
+                <li>Evite colidir com as paredes ou com o próprio corpo da cobra.</li>
+            </ol>
+            <br>
+            <p>Boa sorte jogador! </p>
+            <br>
+            <button id="instructionsMenuBtn" class="btn">MENU</button>
+        </div>
+
+        <div id="credits" class="hidden">
+            <p>Jogo desenvolvido por: André Felipe Pereira de Paiva.</p>
+            <br>
+            <p>Orientador: Orivaldo Santana</p>
+            <br>
+            <button id="creditsMenuBtn" class="btn">MENU</button>
+        </div>
+
+        <div id="gameArea" class="hidden">
+            <div id="score">SCORE: 0</div>
+            <canvas id="gameCanvas" width="500" height="500"></canvas>
+        </div>
+        <div id="gameOver" class="hidden">
+            <h2>GAME OVER</h2>
+            <div id="finalScore"></div>
+            <button id="playAgainBtn" class="btn">JOGAR NOVAMENTE</button>
+            <br>
+            <button id="menuBtn" class="btn">MENU</button>
+        </div>
+    </div>
+</body>
+</html>

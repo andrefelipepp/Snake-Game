@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #191919;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+#score {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.menu, #instructions, #credits, #gameOver {
+    margin-top: 20px;
+}
+
+.btn {
+    border: none;
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    background-color: #28a745;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+.hidden {
+    display: none;
+}
+
+#gameArea {
+    position: relative;
+}
+
+canvas {
+    border: 1px solid #000;
+    background-color: #111;
+}
+
+.game-over {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.final-score {
+    font-weight: 500;
+    font-size: 1.5rem;
+}

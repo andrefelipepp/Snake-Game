@@ -1,4 +1,6 @@
+// Espera até que o conteúdo do DOM esteja totalmente carregado
 document.addEventListener("DOMContentLoaded", () => {
+    // Seleciona elementos do DOM
     const playBtn = document.getElementById("playBtn");
     const instructionsBtn = document.getElementById("instructionsBtn");
     const creditsBtn = document.getElementById("creditsBtn");
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
 
+    // Inicializa variáveis do jogo
     let snake;
     let direction;
     let food;
@@ -24,14 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const gridSize = 20;
     const canvasSize = 500;
 
+    // Função para mostrar um elemento
     function show(element) {
         element.classList.remove("hidden");
     }
 
+    // Função para esconder um elemento
     function hide(element) {
         element.classList.add("hidden");
     }
 
+    // Função para resetar o jogo
     function resetGame() {
         snake = [{ x: gridSize * 2, y: gridSize * 2 }];
         direction = { x: 0, y: 0 };
@@ -40,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateScore();
     }
 
+    // Função para posicionar a comida aleatoriamente no canvas
     function placeFood() {
         food = {
             x: Math.floor(Math.random() * (canvasSize / gridSize)) * gridSize,
@@ -47,15 +54,19 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
 
+    // Função para atualizar a pontuação
     function updateScore() {
         scoreDisplay.textContent = `SCORE: ${score}`;
     }
 
+    // Função principal do jogo, executada em loop
     function gameLoop() {
+        // Atualiza a posição da cobra
         if (direction.x !== 0 || direction.y !== 0) {
             const head = { x: snake[0].x + direction.x * gridSize, y: snake[0].y + direction.y * gridSize };
             snake.unshift(head);
 
+            // Verifica se a cobra comeu a comida
             if (head.x === food.x && head.y === food.y) {
                 score += 10;
                 updateScore();
@@ -64,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 snake.pop();
             }
 
+            // Verifica colisões com o corpo ou paredes
             if (snake.some((segment, index) => index !== 0 && segment.x === head.x && segment.y === head.y) || head.x < 0 || head.x >= canvasSize || head.y < 0 || head.y >= canvasSize) {
                 endGame();
                 return;
@@ -74,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(gameLoop, 100);
     }
 
+    // Função para desenhar o jogo no canvas
     function drawGame() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -86,12 +99,14 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.fillRect(food.x, food.y, gridSize, gridSize);
     }
 
+    // Função para encerrar o jogo
     function endGame() {
         finalScore.textContent = `SCORE: ${score}`;
         hide(gameArea);
         show(gameOver);
     }
 
+    // Função para mudar a direção da cobra com base na tecla pressionada
     function changeDirection(event) {
         const key = event.key;
         if (key === "ArrowUp" && direction.y === 0) {
@@ -105,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Adiciona eventos aos botões
     playBtn.addEventListener("click", () => {
         hide(menu);
         show(gameArea);
@@ -144,5 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
         show(menu);
     });
 
+    // Adiciona evento para detectar teclas pressionadas
     window.addEventListener("keydown", changeDirection);
 });

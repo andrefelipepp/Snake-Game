@@ -1,5 +1,7 @@
+/* Importa a fonte Poppins do Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
+/* Define estilos básicos para todos os elementos */
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +9,7 @@
     font-family: "Poppins", sans-serif;
 }
 
+/* Estiliza o corpo da página */
 body {
     background-color: #191919;
     display: flex;
@@ -17,6 +20,7 @@ body {
     color: white;
 }
 
+/* Contêiner principal */
 .container {
     text-align: center;
     background-color: #222;
@@ -27,6 +31,7 @@ body {
     max-width: 600px;
 }
 
+/* Estiliza o cabeçalho */
 .header {
     display: flex;
     flex-direction: column;
@@ -35,20 +40,24 @@ body {
     margin-bottom: 20px;
 }
 
+/* Estiliza o título no cabeçalho */
 .header h1 {
     margin: 0;
 }
 
+/* Estiliza o placar */
 #score {
     font-size: 1.8rem;
     font-weight: 700;
     margin-top: 10px;
 }
 
+/* Estiliza os menus e seções de instruções, créditos e game over */
 .menu, #instructions, #credits, #gameOver {
     margin-top: 20px;
 }
 
+/* Estiliza os botões */
 .btn {
     border: none;
     border-radius: 100px;
@@ -65,29 +74,35 @@ body {
     gap: 5px;
 }
 
+/* Estiliza os botões ao passar o mouse */
 .btn:hover {
     background-color: #218838;
 }
 
+/* Classe para esconder elementos */
 .hidden {
     display: none;
 }
 
+/* Estiliza a área do jogo */
 #gameArea {
     position: relative;
 }
 
+/* Estiliza o canvas */
 canvas {
     border: 1px solid #000;
     background-color: #111;
 }
 
+/* Estiliza o texto de game over */
 .game-over {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 3rem;
 }
 
+/* Estiliza o placar final */
 .final-score {
     font-weight: 500;
     font-size: 1.5rem;

@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags para configuração básica da página -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
+    <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Link para o arquivo JS -->
     <script src="script.js" defer></script>
+    <!-- Ícone da página -->
     <link rel="icon" href="/images/snake_8346368.png">
 </head>
 <body>
+    <!-- Contêiner principal -->
     <div class="container">
+
+        <!-- Cabeçalho com o título e imagem -->
         <div class="header">
             <h1>Snake Game</h1>
             <img src="/images/snake_8346368.png" alt="snake" width="50" height="50">
         </div>
 
+        <!-- Menu com botões -->
         <div class="menu">
             <div class="div1">
                 <button id="playBtn" class="btn">JOGAR</button>
@@ -28,6 +36,7 @@
             </div>
         </div>
 
+        <!-- Instruções do jogo -->
         <div id="instructions" class="hidden">
             <p>Bem-vindo ao jogo da Cobrinha!</p>
             <br>
@@ -42,6 +51,7 @@
             <button id="instructionsMenuBtn" class="btn">MENU</button>
         </div>
 
+        <!-- Créditos do jogo -->
         <div id="credits" class="hidden">
             <p>Jogo desenvolvido por: André Felipe Pereira de Paiva.</p>
             <br>
@@ -50,10 +60,13 @@
             <button id="creditsMenuBtn" class="btn">MENU</button>
         </div>
 
+        <!-- Área do jogo -->
         <div id="gameArea" class="hidden">
             <div id="score">SCORE: 0</div>
             <canvas id="gameCanvas" width="500" height="500"></canvas>
         </div>
+
+        <!-- Tela de Game Over -->
         <div id="gameOver" class="hidden">
             <h2>GAME OVER</h2>
             <div id="finalScore"></div>
